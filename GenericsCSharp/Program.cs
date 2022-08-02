@@ -26,6 +26,7 @@ class Program
         string logFile = @"./logs.csv";
 
         // PopulateLists(people, logFile);
+        // OriginalTextFileProcessor()
 
         OriginalTextFileProcessor.SavePeople(people, peopleFile);
 
@@ -40,9 +41,9 @@ class Program
 
     private static void PopulateLists(List<Person> people, List<LogEntry> logs)
     {
-        people.Add(new Person { FirstName = "Tim", LastName = "Corey" });
-        people.Add(new Person { FirstName = "Sue", LastName = "Storm", IsAlive = false });
-        people.Add(new Person { FirstName = "Greg", LastName = "Olsen" });
+        people.Add(new Person { FirstName = "John", LastName = "Yolo" });
+        people.Add(new Person { FirstName = "Tom", LastName = "Oscar", IsAlive = false });
+        people.Add(new Person { FirstName = "Ivan", LastName = "Polo" });
 
         logs.Add(new LogEntry { Message = "I blew up", ErrorCode = 9999 });
         logs.Add(new LogEntry { Message = "I'm too awesome", ErrorCode = 1337 });
