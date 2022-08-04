@@ -1,11 +1,13 @@
 ﻿using System;
-namespace GenericsCSharp.Models
+namespace GenericsCSharp.Models;
+
+public class LogEntry
 {
-    public class LogEntry
-    {
-        public LogEntry()
-        {
-        }
-    }
+    public int ErrorCode { get; set; }
+
+    public string Message { get; set; }
+
+    public DateTime TimeOfEvent { get; set; } = DateTime.UtcNow;
+
 }
 
