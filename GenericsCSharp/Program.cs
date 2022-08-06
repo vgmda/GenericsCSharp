@@ -23,8 +23,8 @@ class Program
     {
         List<Person> people = new List<Person>();
         List<LogEntry> logs = new List<LogEntry>();
-        string peopleFile = @"./people.csv";
-        string logFile = @"./logs.csv";
+        string peopleFile = @"/people.csv";
+        string logFile = @"/logs.csv";
 
         // PopulateLists(people, logFile);
         // OriginalTextFileProcessor()
