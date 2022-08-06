@@ -38,7 +38,17 @@ public class OriginalTextFileProcessor
 
     public static void SavePeople(List<Person> people, string filePath)
     {
+        List<string> lines = new List<string>();
 
+        // Add a header row
+        lines.Add("FirstName,IsAlive,LastName");
+
+        foreach (var p in people)
+        {
+            lines.Add($"{p.FirstName}, {p.IsAlive}, {p.LastName}");
+        }
+
+        System.IO.File.WriteAllLines(filePath, lines);
     }
 
 
