@@ -9,8 +9,12 @@
 
   <ItemGroup>
     <None Remove="Models\" />
+    <None Remove="WithGenerics\" />
+    <None Remove="WithoutGenerics\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="WithGenerics\" />
+    <Folder Include="WithoutGenerics\" />
   </ItemGroup>
 </Project>
