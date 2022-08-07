@@ -30,14 +30,16 @@ class Program
 
         PopulateLists(people, logs);
 
-        OriginalTextFileProcessor.SaveLogs(logs, logFile);
 
-        var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
 
-        foreach (var log in newLogs)
-        {
-            Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
-        }
+        //OriginalTextFileProcessor.SaveLogs(logs, logFile);
+
+        //var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
+
+        //foreach (var log in newLogs)
+        //{
+        //    Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
+        //}
 
         // OriginalTextFileProcessor()
 
