@@ -1,5 +1,6 @@
 ﻿using System;
 using GenericsCSharp.Models;
+using GenericsCSharp.WithGenerics;
 using GenericsCSharp.WithoutGenerics;
 
 namespace GenericsCSharp;
@@ -16,7 +17,7 @@ class Program
         DemonstrateTextFileStore();
 
         Console.WriteLine();
-        Console.Write("Press enter to shut down..");
+        Console.Write("Press enter to shut down...");
         Console.ReadLine();
     }
 
@@ -30,6 +31,23 @@ class Program
 
         PopulateLists(people, logs);
 
+        GenericTextFileProcessor.SaveToTextFile<Person>(people, peopleFile);
+        GenericTextFileProcessor.SaveToTextFile<LogEntry>(logs, logFile);
+
+        // var = List<Person>
+        var newPeople = GenericTextFileProcessor.LoadFromTextFile<Person>(peopleFile);
+
+        foreach (var p in newPeople)
+        {
+            Console.WriteLine($"{p.FirstName} {p.LastName} (IsAlive = {p.IsAlive})");
+        }
+
+        var newLogs = GenericTextFileProcessor.LoadFromTextFile<LogEntry>(logFile);
+
+        foreach (var log in newLogs)
+        {
+            Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
+        }
 
 
         //OriginalTextFileProcessor.SaveLogs(logs, logFile);
