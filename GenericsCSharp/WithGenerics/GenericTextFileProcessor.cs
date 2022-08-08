@@ -16,13 +16,17 @@ public static class GenericTextFileProcessor
         // Uses reflection to look at run-time properties
         var cols = entry.GetType().GetProperties();
 
+        // Checks to be sure we have at least one header row and one data row
         if (lines.Count < 2)
         {
             throw new IndexOutOfRangeException("The file was either empty of missing.");
         }
 
+        // Splits the header into one column header per entry
         var headers = lines[0].Split(',');
 
+        // Removes the header row from the lines so we don't
+        // have to worry about skipping over that first row.
         lines.RemoveAt(0);
 
         foreach (var row in lines)
@@ -30,8 +34,18 @@ public static class GenericTextFileProcessor
 
             entry = new T();
 
+            // Splits the row into individual columns. Now the index
+            // of this row matches the index of the header so the
+            // FirstName column header lines up with the FirstName
+            // value in this row.
             var vals = row.Split(',');
 
+
+            // Loops through each header entry so we can compare that
+            // against the list of columns from reflection. Once we get
+            // the matching column, we can do the "SetValue" method to 
+            // set the column value for our entry variable to the vals
+            // item at the same index as this particular header.
             for (var i = 0; i < headers.Length; i++)
             {
                 foreach (var col in cols)
@@ -63,12 +77,16 @@ public static class GenericTextFileProcessor
 
         var cols = data[0].GetType().GetProperties();
 
+        // Loops through each column and gets the name so it can comma 
+        // separate it into the header row.
         foreach (var col in cols)
         {
             line.Append(col.Name);
             line.Append(",");
         }
 
+        // Adds the column header entries to the first line (removing
+        // the last comma from the end first).
         lines.Add(line.ToString().Substring(0, line.Length - 1));
 
         foreach (var row in data)
@@ -81,6 +99,8 @@ public static class GenericTextFileProcessor
                 line.Append(',');
             }
 
+            // Adds the row to the set of lines (removing
+            // the last comma from the end first).
             lines.Add(line.ToString().Substring(0, line.Length - 1));
         }
 
