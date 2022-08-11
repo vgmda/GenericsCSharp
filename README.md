@@ -24,6 +24,7 @@ There are five SOLID principles:
 4. Interface Segregation Principle (ISP)
 	- Interface segregation principle is required to solve the design problem of the application. When all the tasks are done by a single class this becomes an issue. Inheriting such class will result in having sharing method which are not relevant to derived classes. Using ISP, it allows the creation of separate interfaces for each operation or requirement rather than having a single class to do the same work. 
 5. Dependency Inversion Principle (DIP)
+	- The principle states that there should not be a tight coupling among components of software and to avoid that, the components should depend on abstraction. Inversion of Control (IoC) is a technique to implement the Dependency Inversion Principle in C#. Inversion of control can be implemented using either an abstract class or interface. The rule is that the lower level entities should join the contract to a single interface and the higher-level entities will use only entities that are implementing the interface. This technique removes the dependency between the entities. 
 
 
 ### Generic Class Characteristics
@@ -31,5 +32,6 @@ There are five SOLID principles:
 * A generic class can be a base class to other generic or non-generic classes or abstract classes.
 * A generic class can be derived from other generic or non-generic interfaces, classes, or abstract classes.
   
-
+### Conclusion
+The five solid principles discussed above is good for Object Oriented design. Most of the principles involved are adding a layer of abstraction between classes that would otherwise dependent on each other, thus creating a loose coupling relationship which results in less rigid and fragile code. It is always recommended to keep these principles in mind when writing new code.
 
