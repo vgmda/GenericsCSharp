@@ -1,8 +1,8 @@
-# GenericsCSharp
+## GenericsCSharp
 
 > In C#, generic means not specific to a particular data type. C# allows you to define generic classes, interfaces, abstract classes, fields, methods, static methods, properties, events, delegates, and operators using the type parameter and without the specific data type. A type parameter is a placeholder for a particular type specified when creating an instance of the generic type. A generic type is declared by specifying a type parameter in an angle brackets after a type name, e.g. TypeName<T> where T is a type parameter.
   
-### DRY Principle (Don't Repeat Yourself)
+## DRY Principle (Don't Repeat Yourself)
 This is a principle of software development that aims at reducing the repetition of patters and code duplication in favor of abstractions and avoiding redundancy. DRY principle states that, “..every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” Using the principle, logic or algorithms that have certain functionality should only appear once in an application. Generics helps to implement such principle.
   
 #### Methods to resolve duplication by DRY
@@ -11,7 +11,7 @@ This is a principle of software development that aims at reducing the repetition
 * Normalization
 
   
-### SOLID
+## SOLID
 SOLID principles are the design principles that enable us to manage most of the software design issues when it comes to comprehensibility, flexibility, maintainability.
 
 There are five SOLID principles:
@@ -27,11 +27,11 @@ There are five SOLID principles:
 	- The principle states that there should not be a tight coupling among components of software and to avoid that, the components should depend on abstraction. Inversion of Control (IoC) is a technique to implement the Dependency Inversion Principle in C#. Inversion of control can be implemented using either an abstract class or interface. The rule is that the lower level entities should join the contract to a single interface and the higher-level entities will use only entities that are implementing the interface. This technique removes the dependency between the entities. 
 
 
-### Generic Class Characteristics
+## Generic Class Characteristics
 * A generic class increases the reusability. The more type parameters mean more reusable it becomes. However, too much generalization makes code difficult to understand and maintain.
 * A generic class can be a base class to other generic or non-generic classes or abstract classes.
 * A generic class can be derived from other generic or non-generic interfaces, classes, or abstract classes.
   
-### Conclusion
+## Conclusion
 The five solid principles discussed above is good for Object Oriented design. Most of the principles involved are adding a layer of abstraction between classes that would otherwise dependent on each other, thus creating a loose coupling relationship which results in less rigid and fragile code. It is always recommended to keep these principles in mind when writing new code.
 
